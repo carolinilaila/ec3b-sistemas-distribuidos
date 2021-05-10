@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar alunos</title>
+</head>
+<body>
+    <h1>Atualizar Aluno</h1>
+    <form action="/edit/{{alunos.ra}}" method="POST">
+        <table border="0">
+            <tr>
+                <td>nome</td>
+                <td><input type="text" value="{{alunos.nome_aluno}}" name="nome_aluno" size="60"></td>
+            </tr>
+            <tr>
+                <td>Email Aluno</td>
+                <td><input type="text" value="{{alunos.email_aluno}}" name="email_aluno" size="50"></td>
+            </tr> 
+            <tr>
+                <td>Numero</td>
+                <td><input type="text" value="{{alunos.numero}}" name="numero" size="20"></td>
+            </tr> 
+            <tr>
+                <td>CEP</td>
+                <td><input type="text" value="{{alunos.cep}}" name="cep" size="10"></td>
+            </tr> 
+            <tr>
+                <td>Complemento</td>
+                <td><input type="text" value="{{alunos.complemento}}" name="complemento" size="60"></td>
+            </tr> 
+            <tr>
+                <th colspan="2"><button type="submit">Salvar</button></th> 
+            </tr>
+        </table>     
+    </form>
+</body>
+</html>

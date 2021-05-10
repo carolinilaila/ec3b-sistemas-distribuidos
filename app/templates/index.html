@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Alunos</title>
+    <link type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link type="text/css" href="{{url_for('static', filename='css/impacta.css')}}" rel="stylesheet">
+</head>
+<body>
+    <div class="container p-3 my-3 bg-dark text-white">
+        <h1>Cadastro de Alunos</h1> 
+        <a href="/add" class="link">Adicionar Aluno</a>
+        <br />
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>RA</th>
+                <th>Nome Aluno</th>
+                <th>Email do Aluno</th>
+                <th>Logradouro</th>
+                <th>Numero</th>
+                <th>CEP</th>
+                <th>Complemento</th>  
+                <th>Opções</th>                           
+        </thead> 
+        <tbody>
+                {% for c in alunos %}
+                <tr>
+                    <td>{{c.ra}}</td>
+                    <td>{{c.nome_aluno}}</td>
+                    <td>{{c.email_aluno}}</td>
+                    <td>{{c.logradouro}}</td>
+                    <td>{{c.numero}}</td>
+                    <td>{{c.cep}}</td>
+                    <td>{{c.complemento}}</td>
+                    <td>
+                        <a href="/edit/{{c.ra}}">Editar</a>
+                        <a href="/delete/{{c.ra}}">Apagar</a>
+                    </td>    
+                </tr>
+        {% endfor %}
+        </table>  
+        <script src="{{url_for('static', filename='js/bootstrap.min.js')}}">
+        </script>
+    </div>
+</body>
+</html>
